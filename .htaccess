@@ -1,10 +1,6 @@
-Options All -ExecCGI  +Includes +FollowSymLinks
-# REWRITE ___________________
 <IfModule mod_rewrite.c>
-	RewriteEngine on
-	RewriteBase /
-
-	#	и запрошенный путь соответствует пути к физическому файлу
-	RewriteRule (.*) web/index.php?path=$1  [L,QSA]
-
+ RewriteEngine on
+ RewriteRule ^$ web/ [L]
+ RewriteRule (.*) web/$1 [L]
 </IfModule>
+

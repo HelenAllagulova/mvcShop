@@ -8,7 +8,11 @@
  */
 class adminLoginFormClass
 {
-   publick function Render() {
-       return file_get_contents( __DIR__ . '../templates/adminLoginForm.html')
-}
+    public function Render()
+    {
+        ob_start();
+        include('../views/templates/adminLoginForm.html');
+        $path = ob_get_clean();
+        return $path ;
+    }
 }

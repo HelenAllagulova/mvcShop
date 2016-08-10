@@ -14,6 +14,7 @@ class adminLoginController
     public function __construct(array $parameters)
     {
         switch ($parameters[0]) {
+
             case 'getform':  // path {site}/admin/signin/?getform
                 $this->responce = $this->getFormAction();
                 break;
@@ -22,7 +23,8 @@ class adminLoginController
         }
 
     }
-
+    
+    // создает объект 
     public function getFormAction() {
 
         $form = new adminLoginFormClass();
@@ -36,7 +38,7 @@ class adminLoginController
         if (!isset($_POST['login'], $_POST['password']))
             throw new Exception('Not correct parameters for loginning');
 
-        $authorization = new AuthorizationClass($_POST['login'], $_POST['password']);
+        $authorization = new authorizationModel($_POST['login'], $_POST['password']);
 
         return $authorization->checkLogin();
 

@@ -1,6 +1,7 @@
 <?php
 
-    $ROOT_DIR = __DIR__ ;
+    $ROOT_DIR = __DIR__ ; //D:\xampp\htdocs\git\store
+    
 
     function __autoload($className)
     {
@@ -8,15 +9,18 @@
 
         $pathInclude = [
             'models',
-            'models/config',
+            'models/admin',
+            'models/customer',
             'models/ui',
             'views',
-            'views/tables',
             'views/forms',
-            'views/menus',
+            'views/pages',
+            'views/templates',
             'controllers',
-            'controllers/customers',
+            'controllers/customer',
             'controllers/admin',
+            'lib',
+            'config'
         ];
 
 

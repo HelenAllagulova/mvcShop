@@ -1,0 +1,12 @@
+
+<table>
+    <?php foreach($data as $field) {
+        if($field != NULL){?>
+            <tr>
+                <?php foreach($field as $key=>$value) { ?>
+                    <td><?=$value ?></td>
+                <?php } ?>
+            </tr>
+        <?php }
+        } ?>
+</table>
